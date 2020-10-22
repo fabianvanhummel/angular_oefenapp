@@ -1,0 +1,42 @@
+@import url(//db.onlinewebfonts.com/c/c8e8fcd5d85d9b587022fe0a79809b73?family=Friz+Quadrata);
+
+.welkomtext {
+    text-align: center;
+    font-size: 25px;
+    color: darkslategrey;
+    text-shadow: 2px 2px 2px #fff;
+    border: 2px solid darkgoldenrod;
+    padding: 30px;
+    margin: -5px;
+    width:50%;
+    margin-left: 25%;
+    background: rgba(100, 122, 155, 0.9);
+    font-family: "Friz Quadrata"; src: url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.eot"); src: url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.woff") format("woff"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.svg#Friz Quadrata") format("svg");
+    animation: 1s ease-in-out 0ms 1 fadein1_welkom;
+}
+
+.welkomtext2 {
+    text-align: center;
+    font-size: 30px;
+    color: darkslategrey;
+    text-shadow: 2px 2px 2px #fff;
+    border: 2px solid darkgoldenrod;
+    padding: 30px;
+    margin: 15px;
+    width:56%;
+    margin-left: 22%;
+    background: rgba(100, 122, 155, 0.9);
+    font-family: "Friz Quadrata"; src: url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.eot"); src: url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.woff") format("woff"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.svg#Friz Quadrata") format("svg");
+    animation: 2s ease-in-out 0ms 1 fadein2_welkom;
+} 
+
+@keyframes fadein1_welkom {
+    from { opacity: 0; }
+    to   { opacity: 0.8; }
+}
+
+@keyframes fadein2_welkom {
+    0% { opacity: 0; }
+    50% { opacity: 0; }
+    100% { opacity: 0.8; }
+ }

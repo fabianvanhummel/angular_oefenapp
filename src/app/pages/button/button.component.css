@@ -1,0 +1,14 @@
+.gobutton {
+    position:absolute;
+    width:10%;
+    height:4%;
+    left:45%;
+    top:55%;
+    animation: 14s ease-in-out 0ms 1 fadein_button;
+}
+
+@keyframes fadein_button {
+    0% { opacity: 0; }
+    95% { opacity: 0; }
+    100% { opacity: 0.8; }
+}
