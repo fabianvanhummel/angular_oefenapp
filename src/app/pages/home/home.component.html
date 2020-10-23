@@ -1,20 +1,16 @@
 <div class="main__container" style="height:100%; width:100%">
 
     <ng-container *ngIf="players" style="height:100%">
-        <script type="text/javascript">
 
-            setTimeout(function() {
-        
-        }, 5000);
-        </script>
-        <div *ngFor="let player of players" style="height:100%">
+        <div *ngFor="let player of players">
             
-            <div class="playerblock_{{ player.int }}">
+            <div class="playerblock_{{ player.int }}" [ngStyle]="changeStyle()">
                 <input class="text1" type="text" id="text_{{ player.int }}" name="fname" placeholder="{{ player.name }}">
                 <img src="assets/pngkit_blank-logo-png_7839822.png" style="width: 90%; position:absolute; left:5%; z-index: -1; top:3%; opacity: 1;">
             </div>
-            
         </div>
     </ng-container>
 
-</div>
+</div> 
+
+<app-button></app-button> 

@@ -6,14 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent implements OnInit {
-
+  started: boolean = false  
   ngOnInit(): void {
   }
 
-  clickMessage = '';
-
-  onClickMe() {
-    this.clickMessage = 'You are my hero!';
+  changeStyle() {
+    this.started = true
+    return(this.started)
   }
-
 }
