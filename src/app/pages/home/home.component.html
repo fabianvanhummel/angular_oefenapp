@@ -1,16 +1,34 @@
 <div class="main__container" style="height:100%; width:100%">
-
+    <app-legend *ngIf="started" [ngStyle]="{'width':'100%'}"></app-legend>
     <ng-container *ngIf="players" style="height:100%">
-
         <div *ngFor="let player of players">
-            
-            <div class="playerblock_{{ player.int }}" [ngStyle]="changeStyle()">
-                <input class="text1" type="text" id="text_{{ player.int }}" name="fname" placeholder="{{ player.name }}">
-                <img src="assets/pngkit_blank-logo-png_7839822.png" style="width: 90%; position:absolute; left:5%; z-index: -1; top:3%; opacity: 1;">
+            <div class="playerblock animation_{{ player.int }}"
+                [ngStyle]="{'height': height_dynamic, 'left':(19.6 * (player.int - 1)) + '%'}">
+                <div class="playerdata" [ngStyle]="{'visibility' : dynamic_visibility_champions}"
+                    [ngClass]="{'animation_accept': started}">
+                    <a class="fav_champ">Favoriete champion:</a>
+                    <img class="fav_champ_image" src="assets/champion_icons/{{ player.fav_champ }}_Square_0-compressor.png">
+                    <a class="fav_champ_text">Winrate:</a>
+                    <a class="winrate" [ngStyle]="{'color' : colorWinrate(player.win_rate)}">{{ player.win_rate }}%</a>
+                    <br>
+                    <a class="fav_champ_text">Games:</a>
+                    <a class="fav_champ_fact" [ngStyle]="{'color' : colorGames(player.games_played_fav)}">{{ player.games_played_fav }}</a>
+                    <br>
+                    <a class="fav_champ_text">Mastery:</a>
+                    <a class="fav_champ_fact" [ngStyle]="{'color' : colorMastery(player.mastery_fav)}">{{ player.mastery_fav }}</a>
+                    <br>
+                    <a class="fav_champ_text">K/DA:</a>
+                    <a class="fav_champ_fact" [ngStyle]="{'color' : colorKDA(player.kda_fav)}">{{ player.kda_fav }}</a>
+                </div>
             </div>
+            <input class="text_1 animation_{{ player.int }}" [ngStyle]="{'left':(5 + (player.int - 1) * 19.5) + '%'}"
+                type="text" id="text_{{ player.int }}" name="fname" placeholder="{{ player.name }}">
+            <img class="text_image animation_{{ player.int }}" src="assets/pngkit_blank-logo-png_7839822.png"
+                [ngStyle]="{'left':(3.3 + (player.int - 1) * 19.5) + '%'}">
         </div>
     </ng-container>
+</div>
 
-</div> 
-
-<app-button></app-button> 
+<a class="gobutton" (click)="goButton()" [ngStyle]="{'visibility': dynamic_visibility_button}">
+    <img alt="W3Schools" src="assets/lol_accept.png" width="200px" height="60px">
+</a>

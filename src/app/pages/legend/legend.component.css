@@ -1,0 +1,56 @@
+@import url(//db.onlinewebfonts.com/c/c8e8fcd5d85d9b587022fe0a79809b73?family=Friz+Quadrata);
+
+.my-legend {
+    animation: 1s ease-in-out 0ms 1 fadein;
+    background-color: lightblue;
+    border-radius: 50px 50px 15px 15px;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 0.8; }
+}
+
+.my-legend .legend-title {
+    position:relative;
+    margin:auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 300%;
+    font-family: "Friz Quadrata"; src: url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.eot"); src: url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.woff") format("woff"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.svg#Friz Quadrata") format("svg");
+    }
+.my-legend .legend-scale ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+    position:relative;
+    margin:auto;
+    text-align: center;
+    }
+.my-legend .legend-scale ul li {
+    position:relative;
+    display: block;
+    float: left;
+    width: 19.85%;
+    margin:auto;
+    text-align: center;
+    margin-left:0.8px;
+    font-size: 28px;
+    list-style: none;
+    font-family: "Friz Quadrata"; src: url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.eot"); src: url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.woff") format("woff"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.svg#Friz Quadrata") format("svg");
+    }
+.my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 45px;
+    width: 244px;
+    position:relative;
+
+    }
+.my-legend a {
+    color: #777;
+    }
