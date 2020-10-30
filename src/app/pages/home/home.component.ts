@@ -14,6 +14,8 @@ export class HomeComponent {
   color = ''
   started = false;
   height_dynamic = '5rem'
+  dynamic_background = ""
+  font_size = "14pt"
   dynamic_visibility_button = 'visible'
   dynamic_visibility_champions = 'hidden'
   dynamic_visibility_legend = 'visible'
@@ -89,6 +91,7 @@ export class HomeComponent {
     this.height_dynamic = '70%'
     this.dynamic_visibility_button = 'hidden'
     this.dynamic_visibility_champions = 'visible'
+    this.dynamic_background = 'rgba(0,0,0,0)';
   }
 
   playerData = null;

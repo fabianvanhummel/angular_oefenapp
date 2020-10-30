@@ -1,33 +1,120 @@
+<!--
+De home component is de body van de app. Hierin gebeurt basically alles. Dit kan ongetwijfeld nog slimmer worden opgedeeld in componenten om minder regels code te gebruiken,
+maar daar ben ik niet goed genoeg voor in Angular/Javascript.
+-->
 <div class="main__container" style="height:100%; width:100%">
+    <!--
+    Laat de legenda alleen zien als de accept knop ingedrukt is.
+    -->
     <app-legend *ngIf="started" [ngStyle]="{'width':'100%'}"></app-legend>
     <ng-container *ngIf="players" style="height:100%">
+        <!--
+        Loop over players.ts, de file waarin playerdata geupdatet wordt aan de hand van de back-end API in R.
+        -->
         <div *ngFor="let player of players">
+            <!--
+            Maak per speler een block aan waarin hun gegevens worden gevisualiseerd.
+            -->
             <div class="playerblock animation_{{ player.int }}"
                 [ngStyle]="{'height': height_dynamic, 'left':(19.6 * (player.int - 1)) + '%'}">
-                <div class="playerdata" [ngStyle]="{'visibility' : dynamic_visibility_champions}"
+                <!--
+                Per speler zijn de favoriete champion en de top 3 meest gespeelde champions in de afgelopen 30 dagen te zien. Daarnaast ook nog wat stats van deze champions.
+                -->
+                <div class="playerdata_fav" [ngStyle]="{'visibility' : dynamic_visibility_champions}"
                     [ngClass]="{'animation_accept': started}">
                     <a class="fav_champ">Favoriete champion:</a>
-                    <img class="fav_champ_image" src="assets/champion_icons/{{ player.fav_champ }}_Square_0-compressor.png">
+                    <img class="fav_champ_image"
+                        src="assets/champion_icons/{{ player.fav_champ }}_Square_0-compressor.png">
                     <a class="fav_champ_text">Winrate:</a>
+                    <!--
+                    Alle gegevens per champion worden geschaald op basis van risico voor de game. Dus hoog risico champions die je waarschijnlijk wilt bannen, daarvan kleuren de eigenschappen zwart.
+                    -->
                     <a class="winrate" [ngStyle]="{'color' : colorWinrate(player.win_rate)}">{{ player.win_rate }}%</a>
                     <br>
                     <a class="fav_champ_text">Games:</a>
-                    <a class="fav_champ_fact" [ngStyle]="{'color' : colorGames(player.games_played_fav)}">{{ player.games_played_fav }}</a>
+                    <a class="fav_champ_fact"
+                        [ngStyle]="{'color' : colorGames(player.games_played_fav)}">{{ player.games_played_fav }}</a>
                     <br>
                     <a class="fav_champ_text">Mastery:</a>
-                    <a class="fav_champ_fact" [ngStyle]="{'color' : colorMastery(player.mastery_fav)}">{{ player.mastery_fav }}</a>
+                    <a class="fav_champ_fact"
+                        [ngStyle]="{'color' : colorMastery(player.mastery_fav)}">{{ player.mastery_fav }}</a>
                     <br>
                     <a class="fav_champ_text">K/DA:</a>
                     <a class="fav_champ_fact" [ngStyle]="{'color' : colorKDA(player.kda_fav)}">{{ player.kda_fav }}</a>
                 </div>
+                <br>
+                <div class="playerdata_rec" [ngStyle]="{'visibility' : dynamic_visibility_champions}"
+                    [ngClass]="{'animation_accept': started}">
+                    <div>
+                        <a class="rec_champ">Meest gespeeld in afgelopen 30 dagen:</a>
+                        <img class="rec_champ_image"
+                            src="assets/champion_icons/{{ player.top_3_champs_recent[0] }}_Square_0-compressor.png">
+                        <a class="rec_champ_text">Winrate:</a>
+                        <!--
+                    Alle gegevens per champion worden geschaald op basis van risico voor de game. Dus hoog risico champions die je waarschijnlijk wilt bannen, daarvan kleuren de eigenschappen zwart.
+                    -->
+                        <a class="winrate_rec"
+                            [ngStyle]="{'color' : colorWinrate(player.top_3_champs_winrate_recent[0])}">{{ player.top_3_champs_winrate_recent[0] }}%</a>
+                        <br>
+                        <a class="rec_champ_text">Games:</a>
+                        <a class="rec_champ_fact"
+                            [ngStyle]="{'color' : colorGames(player.top_3_champs_games_recent[0])}">{{ player.top_3_champs_games_recent[0] }}</a>
+                        <br>
+                        <a class="rec_champ_text">K/DA:</a>
+                        <a class="rec_champ_fact"
+                            [ngStyle]="{'color' : colorKDA(player.top_3_champs_kda_recent[0])}">{{ player.top_3_champs_kda_recent[0] }}</a>
+                    </div>
+                    <div style="margin-top:15px;">
+                        <img class="rec_champ_image"
+                        src="assets/champion_icons/{{ player.top_3_champs_recent[1] }}_Square_0-compressor.png">
+                        <a class="rec_champ_text">Winrate:</a>
+                        <!--
+                        Alle gegevens per champion worden geschaald op basis van risico voor de game. Dus hoog risico champions die je waarschijnlijk wilt bannen, daarvan kleuren de eigenschappen zwart.
+                        -->
+                        <a class="winrate_rec"
+                            [ngStyle]="{'color' : colorWinrate(player.top_3_champs_winrate_recent[1])}">{{ player.top_3_champs_winrate_recent[1] }}%</a>
+                        <br>
+                        <a class="rec_champ_text">Games:</a>
+                        <a class="rec_champ_fact"
+                            [ngStyle]="{'color' : colorGames(player.top_3_champs_games_recent[1])}">{{ player.top_3_champs_games_recent[1] }}</a>
+                        <br>
+                        <a class="rec_champ_text">K/DA:</a>
+                        <a class="rec_champ_fact"
+                            [ngStyle]="{'color' : colorKDA(player.top_3_champs_kda_recent[1])}">{{ player.top_3_champs_kda_recent[1] }}</a>
+                    </div>
+                    <div style='margin-top:15px;'>
+                        <img class="rec_champ_image"
+                        src="assets/champion_icons/{{ player.top_3_champs_recent[2] }}_Square_0-compressor.png">
+                        <a class="rec_champ_text">Winrate:</a>
+                        <!--
+                            Alle gegevens per champion worden geschaald op basis van risico voor de game. Dus hoog risico champions die je waarschijnlijk wilt bannen, daarvan kleuren de eigenschappen zwart.
+                            -->
+                        <a class="winrate_rec"
+                            [ngStyle]="{'color' : colorWinrate(player.top_3_champs_winrate_recent[2])}">{{ player.top_3_champs_winrate_recent[2] }}%</a>
+                        <br>
+                        <a class="rec_champ_text">Games:</a>
+                        <a class="rec_champ_fact"
+                            [ngStyle]="{'color' : colorGames(player.top_3_champs_games_recent[2])}">{{ player.top_3_champs_games_recent[2] }}</a>
+                        <br>
+                        <a class="rec_champ_text">K/DA:</a>
+                        <a class="rec_champ_fact"
+                            [ngStyle]="{'color' : colorKDA(player.top_3_champs_kda_recent[2])}">{{ player.top_3_champs_kda_recent[2] }}</a>
+                    </div>
+                </div>
             </div>
-            <input class="text_1 animation_{{ player.int }}" [ngStyle]="{'left':(5 + (player.int - 1) * 19.5) + '%'}"
+            <!--
+            Geef een leuk achtergrondje aan de input texts.
+            -->
+            <input class="text_1 animation_{{ player.int }}" [ngStyle]="{'left':(4 + (player.int - 1) * 19.6) + '%', 'background':dynamic_background}"
                 type="text" id="text_{{ player.int }}" name="fname" placeholder="{{ player.name }}">
             <img class="text_image animation_{{ player.int }}" src="assets/pngkit_blank-logo-png_7839822.png"
-                [ngStyle]="{'left':(3.3 + (player.int - 1) * 19.5) + '%'}">
+                [ngStyle]="{'left':(1.8 + (player.int - 1) * 19.6) + '%'}">
+            <img class="rank_image animation_{{ player.int }}" src="assets/ranked_icons/{{ player.rank }}.png"
+                [ngStyle]="{'left':(16 + (player.int - 1) * 19.6) + '%'}">
+            <a class="rank_text animation_{{ player.int }}" [ngStyle]="{'left':(3.9 + (player.int - 1) * 19.6) + '%'}">{{ player.rank_tier }} </a>
         </div>
     </ng-container>
-</div>
+</div> 
 
 <a class="gobutton" (click)="goButton()" [ngStyle]="{'visibility': dynamic_visibility_button}">
     <img alt="W3Schools" src="assets/lol_accept.png" width="200px" height="60px">

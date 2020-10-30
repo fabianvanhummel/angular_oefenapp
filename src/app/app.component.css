@@ -21,7 +21,7 @@
     border: 2px solid darkgoldenrod;
     width:56%;
     margin: auto;
-    margin-top:2px;
+    margin-top:10px;
     background: rgba(100, 122, 155, 0.9);
     font-family: "Friz Quadrata"; src: url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.eot"); src: url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.woff") format("woff"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/c8e8fcd5d85d9b587022fe0a79809b73.svg#Friz Quadrata") format("svg");
     animation: 2s ease-in-out 0ms 1 fadein2_welkom;
